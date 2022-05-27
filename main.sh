@@ -11,12 +11,12 @@ flake8 $1
 echo "${COLOUR}"
 echo "IMPORT ORDER CHECK"
 echo $NC
-isort $1 --check-only
+isort $1 --check-only --diff
 
 echo "${COLOUR}"
 echo "FORMAT CHECK"
 echo $NC
-black $1 --check
+black $1 --check --diff
 
 echo "${COLOUR}"
 echo "TYPE CHECK"
