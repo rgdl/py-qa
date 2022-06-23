@@ -6,7 +6,7 @@ NC="\033[0m"
 echo "${COLOUR}"
 echo "LINTING (flake8)"
 echo $NC
-flake8 $1 --ignore E402,E203
+flake8 $1 --ignore E402,E203,W503
 
 echo "${COLOUR}"
 echo "IMPORT ORDER CHECK (isort)"
