@@ -21,4 +21,4 @@ black $1 --check --diff --line-length=79 --color
 echo "${COLOUR}"
 echo "TYPE CHECK (mypy)"
 echo $NC
-mypy $1
+mypy $1 --strict
