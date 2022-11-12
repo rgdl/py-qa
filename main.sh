@@ -22,3 +22,9 @@ echo "${COLOUR}"
 echo "TYPE CHECK (mypy)"
 echo $NC
 mypy $1 --strict
+
+echo "${COLOUR}"
+echo "DOC CHECK (pydocstyle, darglint)"
+echo $NC
+pydocstyle -v --convention=google $1
+darglint -s google  --verbosity 2 $1
