@@ -24,7 +24,17 @@ echo $NC
 mypy $1 --strict
 
 echo "${COLOUR}"
-echo "DOC CHECK (pydocstyle, darglint)"
+echo "DOC CHECK (pydocstyle)"
 echo $NC
 pydocstyle -v --convention=google $1
+
+echo "${COLOUR}"
+echo "DOC CHECK (darglint)"
+echo $NC
 darglint -s google  --verbosity 2 $1
+
+echo "${COLOUR}"
+echo "COMPLEXITY CHECK (radon)"
+echo $NC
+radon cc -s -nb --total-average .
+
