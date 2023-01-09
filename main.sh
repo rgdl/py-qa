@@ -36,5 +36,5 @@ darglint -s google  --verbosity 2 $1
 echo "${COLOUR}"
 echo "COMPLEXITY CHECK (radon)"
 echo $NC
-radon cc -s --total-average $1
+radon cc -s --total-average -nb $1
 
