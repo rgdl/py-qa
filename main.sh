@@ -3,6 +3,8 @@
 COLOUR="\033[0;35m"
 NC="\033[0m"
 
+# TODO: make the output more rainbow, doing something clever with an array of ANSI codes
+
 echo "${COLOUR}"
 echo "LINTING (flake8)"
 echo $NC
@@ -38,3 +40,7 @@ echo "COMPLEXITY CHECK (radon)"
 echo $NC
 radon cc -s --total-average -nb $1
 
+echo "${COLOUR}"
+echo "Test (pytest)"
+echo $NC
+coverage run -m pytest $1/* && coverage report -m
